@@ -1,0 +1,51 @@
+#include <iostream>
+using namespace std;
+class License
+{
+    //private data
+    int age;
+    string name;
+
+public:
+    //declaration of function or method 
+    void setdata();
+    void checkdata();
+    void displaydata();
+};
+
+void License::setdata()
+{
+    cout << "Enter your name : ";
+    cin >> name;
+    cout << "Enter your age : ";
+    cin >> age;
+}
+
+void License::checkdata()
+{
+    if (age < 18)
+    {
+        cout << "You cannot get driving license";
+    }
+    else
+    {
+        cout << "You can get driving license\n\n";
+        displaydata(); //nested function
+    }
+}
+
+void License::displaydata()
+{
+    cout << "Name : " << name << endl;
+    cout << "Age : " << age << endl;
+    cout << "Driving skill : Not bad " << endl;
+    cout << "Result : Pass " << endl;
+}
+int main()
+{
+    License lic;
+    lic.setdata();
+    lic.checkdata();
+
+    return 0;
+}
