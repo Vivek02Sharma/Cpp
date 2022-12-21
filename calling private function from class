@@ -1,0 +1,49 @@
+#include <iostream>
+using namespace std;
+class file
+{
+    string file_name;
+    int file_id;
+    int file_size;
+    void private_file();
+
+public:
+    void setdata();
+    void displaydata();
+};
+
+// private functions
+void file::private_file()
+{
+    cout << "\n\nFill the file details: \n\n";
+    cout << "Enter the file name : ";
+    cin >> file_name;
+    cout << "Enter the file ID : ";
+    cin >> file_id;
+    cout << "Enter the file size : ";
+    cin >> file_size;
+}
+
+// public function which is used to set data using private_file() function
+void file::setdata()
+{
+    private_file(); // calling private function
+}
+
+// public function which display the data
+void file::displaydata()
+{
+    cout << "\n\nThe file details are as follows\n\n";
+    cout << "The file name is " << file_name << endl;
+    cout << "The file ID is " << file_id << endl;
+    cout << "The file size is " << file_size << endl;
+}
+
+int main()
+{
+    file f;
+    f.setdata();
+    f.displaydata();
+
+    return 0;
+}
